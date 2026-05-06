@@ -1,0 +1,27 @@
+name: CI/CD Pipeline TP Final
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # <--- C'est ici que la magie opère
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 1. Configurer l'infrastructure (Partie 1)
+        run: |
+          chmod +x ./generate_inventory.sh
+          ./generate_inventory.sh
+
+      - name: 2. Builder l'image Docker (Partie 2)
+        run: |
+          docker build -t mon-api-tp:latest .
+
+      - name: 3. Déployer sur K3s (Partie 3)
+        run: |
+          kubectl apply -f ./k8s/deployment.yml
+          kubectl apply -f ./k8s/service.yml
