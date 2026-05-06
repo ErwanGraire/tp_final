@@ -1,20 +1,10 @@
-name: CI/CD Pipeline TP Final
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  deploy:
-    runs-on: self-hosted  # <--- C'est ici que la magie opère
-
-    steps:
+steps:
       - name: Checkout du code
         uses: actions/checkout@v4
 
       - name: 1. Configurer l'infrastructure (Partie 1)
         run: |
-          chmod +x ./generate_inventory.sh
+          chmod +x *.sh
           ./generate_inventory.sh
 
       - name: 2. Builder l'image Docker (Partie 2)
