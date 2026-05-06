@@ -18,9 +18,9 @@ jobs:
 
       - name: 2. Builder l'image Docker (Partie 2)
         run: |
-          docker build -t mon-api-tp:latest .
+          sudo docker build -t mon-api-tp:latest .
 
       - name: 3. Déployer sur K3s (Partie 3)
         run: |
-          kubectl apply -f ./k8s/deployment.yml
-          kubectl apply -f ./k8s/service.yml
+          sudo kubectl apply -f ./k8s/deployment.yml
+          sudo kubectl apply -f ./k8s/service.yml
