@@ -22,5 +22,5 @@ jobs:
 
       - name: 3. Déployer sur K3s (Partie 3)
         run: |
-          sudo kubectl apply -f ./k8s/deployment.yml
-          sudo kubectl apply -f ./k8s/service.yml
+          sudo kubectl apply -f ./k8s/api.yaml
+          sudo kubectl apply -f ./k8s/mysql.yaml
