@@ -1,4 +1,13 @@
-steps:
+name: CI/CD Pipeline TP Final
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
       - name: Checkout du code
         uses: actions/checkout@v4
 
