@@ -1,0 +1,15 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('<h1>API du TP Final op√©rationnelle ! Ì∫Ä</h1>');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK' });
+});
+
+app.listen(port, () => {
+  console.log('Serveur d√©marr√© sur le port ' + port);
+});
