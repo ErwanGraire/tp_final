@@ -13,14 +13,24 @@ jobs:
 
       - name: 1. Configurer l'infrastructure (Partie 1)
         run: |
+          # On rend les scripts exécutables et on génère l'inventaire
           chmod +x *.sh
           ./generate_inventory.sh
 
-      - name: 2. Builder l'image Docker (Partie 2)
+      - name: Connexion au Docker Hub
+        # Utilisation des secrets GitHub pour ne pas afficher ton mot de passe en clair
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: 2. Builder et Pousser l'image Docker (Partie 2)
         run: |
-          sudo docker build -t mon-api-tp:latest .
+          # Build de l'image optimisée (Node-Alpine via ton Dockerfile)
+          sudo docker build -t errwwaann/lacet-api:latest .
+          # Push vers Docker Hub comme demandé dans le sujet [cite: 23]
+          sudo docker push errwwaann/lacet-api:latest
 
       - name: 3. Déployer sur K3s (Partie 3)
         run: |
+          # Application des manifests Kubernetes [cite: 29]
+          # L'utilisation de 'apply' garantit l'idempotence demandée 
           sudo kubectl apply -f ./k8s/api.yaml
           sudo kubectl apply -f ./k8s/mysql.yaml
