@@ -15,7 +15,8 @@ L'infrastructure est pensée en mode *Infrastructure as Code* (IaC) pour être t
 vagrant ssh -c "bash /vagrant/get_ip.sh"
 ```
 
----
+---<img width="753" height="213" alt="image" src="https://github.com/user-attachments/assets/e49337c0-1e99-4254-966e-83858087f6ec" />
+
 
 ##  Partie 2 : Conteneurisation (Docker)
 L'API Node.js est packagée pour être la plus légère, sécurisée et portable possible.
