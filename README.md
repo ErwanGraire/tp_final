@@ -15,7 +15,9 @@ L'infrastructure est pensée en mode *Infrastructure as Code* (IaC) pour être t
 vagrant ssh -c "bash /vagrant/get_ip.sh"
 ```
 
----<img width="753" height="213" alt="image" src="https://github.com/user-attachments/assets/e49337c0-1e99-4254-966e-83858087f6ec" />
+---
+<img width="753" height="213" alt="image" src="https://github.com/user-attachments/assets/e49337c0-1e99-4254-966e-83858087f6ec" />
+<img width="571" height="76" alt="image" src="https://github.com/user-attachments/assets/cbf44bb1-6d92-4701-b238-241d68346b5c" />
 
 
 ##  Partie 2 : Conteneurisation (Docker)
@@ -27,6 +29,7 @@ L'API Node.js est packagée pour être la plus légère, sécurisée et portable
 - 🔗 **Lien Docker Hub** : [errwwaann/lacet-api](https://hub.docker.com/r/errwwaann/lacet-api)
 
 ---
+<img width="774" height="91" alt="image" src="https://github.com/user-attachments/assets/48ca89fa-e603-4ae5-abee-0828358d4db7" />
 
 ##  Partie 3 : Orchestration Kubernetes (K3s)
 L'application est déployée sur un cluster K3s avec une gestion stricte de la haute disponibilité et de la persistance des données.
@@ -47,6 +50,9 @@ vagrant ssh -c "sudo kubectl get hpa"
 ```
 
 ---
+<img width="732" height="129" alt="image" src="https://github.com/user-attachments/assets/269f0084-b870-4eed-b14a-6a9f4e8eed49" />
+<img width="871" height="148" alt="image" src="https://github.com/user-attachments/assets/6663491a-b7ab-4025-865a-8b390160e3c7" />
+<img width="883" height="148" alt="image" src="https://github.com/user-attachments/assets/b82be5c1-c6bb-4e47-b175-ec896d6d3eb3" />
 
 ##  Partie 4 : Pipeline CI/CD (GitHub Actions)
 L'automatisation complète du déploiement est assurée par un workflow GitHub Actions.
@@ -78,6 +84,7 @@ vagrant ssh -- -L 3001:localhost:3001 -L 9090:localhost:9090
 
 
 ---
+<img width="1450" height="391" alt="image" src="https://github.com/user-attachments/assets/fe34d4eb-3462-4964-9d85-19b1355bd0b3" />
 
 ## 🛠️ Guide de lancement rapide
 
