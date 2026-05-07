@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network", use_dhcp_assigned_default_route: true
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048" # 2Go recommandés 
+    vb.memory = "2048" # 2Go 
     vb.name = "k3s-server"
   end
 
