@@ -18,19 +18,19 @@ jobs:
           ./generate_inventory.sh
 
       - name: Connexion au Docker Hub
-        # Utilisation des secrets GitHub pour ne pas afficher ton mot de passe en clair
+        
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: 2. Builder et Pousser l'image Docker (Partie 2)
         run: |
-          # Build de l'image optimisée (Node-Alpine via ton Dockerfile)
+          # Build de l'image optimisée 
           sudo docker build -t errwwaann/lacet-api:latest .
-          # Push vers Docker Hub comme demandé dans le sujet [cite: 23]
+          # Push vers Docker Hub 
           sudo docker push errwwaann/lacet-api:latest
 
       - name: 3. Déployer sur K3s (Partie 3)
         run: |
-          # Application des manifests Kubernetes [cite: 29]
+          # Application des manifests Kubernetes 
           # L'utilisation de 'apply' garantit l'idempotence demandée 
           sudo kubectl apply -f ./k8s/api.yaml
           sudo kubectl apply -f ./k8s/mysql.yaml
