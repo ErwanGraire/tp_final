@@ -85,6 +85,12 @@ vagrant ssh -- -L 3001:localhost:3001 -L 9090:localhost:9090
 
 ---
 <img width="1450" height="391" alt="image" src="https://github.com/user-attachments/assets/fe34d4eb-3462-4964-9d85-19b1355bd0b3" />
+<img width="1438" height="397" alt="image" src="https://github.com/user-attachments/assets/d8538644-83d4-4ad5-a2b0-fa15186a887f" />
+<img width="1464" height="687" alt="image" src="https://github.com/user-attachments/assets/8f2e0017-c91d-4810-9099-686c69ed0dfe" />
+<img width="1354" height="648" alt="image" src="https://github.com/user-attachments/assets/db5a1f3f-de4e-4521-a25e-484ae87ccda6" />
+Le Monitoring du Dossier Partagé : Dans Disk Space Used, on voit la ligne rouge /vagrant. 
+C'est la preuve que l'on surveilles même l'espace disque du dossier partagé entre Windows et la VM.
+
 
 ## 🛠️ Guide de lancement rapide
 
